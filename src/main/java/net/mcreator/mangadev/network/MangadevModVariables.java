@@ -94,6 +94,7 @@ public class MangadevModVariables {
 			clone.DiscoveryRate = original.DiscoveryRate;
 			clone.RecentTweet = original.RecentTweet;
 			clone.RandomUser = original.RandomUser;
+			clone.CharacterAmount = original.CharacterAmount;
 			if (!event.isWasDeath()) {
 			}
 			if (!event.getEntity().level().isClientSide()) {
@@ -153,6 +154,7 @@ public class MangadevModVariables {
 		public double DiscoveryRate = 0;
 		public String RecentTweet = "";
 		public String RandomUser = "";
+		public double CharacterAmount = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -179,6 +181,7 @@ public class MangadevModVariables {
 			nbt.putDouble("DiscoveryRate", DiscoveryRate);
 			nbt.putString("RecentTweet", RecentTweet);
 			nbt.putString("RandomUser", RandomUser);
+			nbt.putDouble("CharacterAmount", CharacterAmount);
 			return nbt;
 		}
 
@@ -202,6 +205,7 @@ public class MangadevModVariables {
 			DiscoveryRate = nbt.getDouble("DiscoveryRate");
 			RecentTweet = nbt.getString("RecentTweet");
 			RandomUser = nbt.getString("RandomUser");
+			CharacterAmount = nbt.getDouble("CharacterAmount");
 		}
 	}
 
@@ -253,6 +257,7 @@ public class MangadevModVariables {
 					variables.DiscoveryRate = message.data.DiscoveryRate;
 					variables.RecentTweet = message.data.RecentTweet;
 					variables.RandomUser = message.data.RandomUser;
+					variables.CharacterAmount = message.data.CharacterAmount;
 				}
 			});
 			context.setPacketHandled(true);
