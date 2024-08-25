@@ -44,6 +44,24 @@ public class YesClickedProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
+				if (!((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MangaName).contains(" ")) {
+					{
+						String _setval = ((((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MangaName)).split(" ")[0]).substring(0, 1);
+						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.ShortMangaName = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+				} else if (((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MangaName).contains(" ")) {
+					{
+						String _setval = ((((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MangaName)).split(" ")[0]).substring(0, 1) + ""
+								+ ((((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MangaName)).split(" ")[1]).substring(0, 1);
+						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.ShortMangaName = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+				}
 				if (entity instanceof ServerPlayer _ent) {
 					BlockPos _bpos = BlockPos.containing(x, y, z);
 					NetworkHooks.openScreen((ServerPlayer) _ent, new MenuProvider() {
@@ -74,6 +92,24 @@ public class YesClickedProcedure {
 						capability.MangaName = _setval;
 						capability.syncPlayerVariables(entity);
 					});
+				}
+				if (!((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MangaName).contains(" ")) {
+					{
+						String _setval = ((((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MangaName)).split(" ")[0]).substring(0, 1);
+						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.ShortMangaName = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+				} else if (((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MangaName).contains(" ")) {
+					{
+						String _setval = ((((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MangaName)).split(" ")[0]).substring(0, 1) + ""
+								+ ((((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MangaName)).split(" ")[1]).substring(0, 1);
+						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.ShortMangaName = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
 				}
 				if (entity instanceof ServerPlayer _ent) {
 					BlockPos _bpos = BlockPos.containing(x, y, z);
@@ -106,6 +142,24 @@ public class YesClickedProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
+				if (!((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MangaName).contains(" ")) {
+					{
+						String _setval = ((((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MangaName)).split(" ")[0]).substring(0, 1);
+						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.ShortMangaName = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+				} else if (((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MangaName).contains(" ")) {
+					{
+						String _setval = ((((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MangaName)).split(" ")[0]).substring(0, 1) + ""
+								+ ((((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MangaName)).split(" ")[1]).substring(0, 1);
+						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.ShortMangaName = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+				}
 				if (entity instanceof ServerPlayer _ent) {
 					BlockPos _bpos = BlockPos.containing(x, y, z);
 					NetworkHooks.openScreen((ServerPlayer) _ent, new MenuProvider() {
@@ -137,6 +191,24 @@ public class YesClickedProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
+				if (!((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MangaName).contains(" ")) {
+					{
+						String _setval = ((((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MangaName)).split(" ")[0]).substring(0, 1);
+						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.ShortMangaName = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+				} else if (((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MangaName).contains(" ")) {
+					{
+						String _setval = ((((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MangaName)).split(" ")[0]).substring(0, 1) + ""
+								+ ((((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MangaName)).split(" ")[1]).substring(0, 1);
+						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.ShortMangaName = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+				}
 				if (entity instanceof ServerPlayer _ent) {
 					BlockPos _bpos = BlockPos.containing(x, y, z);
 					NetworkHooks.openScreen((ServerPlayer) _ent, new MenuProvider() {
@@ -167,6 +239,24 @@ public class YesClickedProcedure {
 						capability.MangaName = _setval;
 						capability.syncPlayerVariables(entity);
 					});
+				}
+				if (!((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MangaName).contains(" ")) {
+					{
+						String _setval = ((((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MangaName)).split(" ")[0]).substring(0, 1);
+						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.ShortMangaName = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+				} else if (((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MangaName).contains(" ")) {
+					{
+						String _setval = ((((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MangaName)).split(" ")[0]).substring(0, 1) + ""
+								+ ((((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MangaName)).split(" ")[1]).substring(0, 1);
+						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.ShortMangaName = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
 				}
 				if (entity instanceof ServerPlayer _ent) {
 					BlockPos _bpos = BlockPos.containing(x, y, z);
