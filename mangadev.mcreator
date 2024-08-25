@@ -772,6 +772,20 @@
         ]
       },
       "path": "~/Procedures/ChatTypes"
+    },
+    {
+      "name": "MainEventChatType",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "main_event_chat_type",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/mangadev/procedures/MainEventChatTypeProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Procedures/ChatTypes"
     }
   ],
   "variable_elements": [
@@ -900,10 +914,10 @@
       "gui.mangadev.writer_gui.ChapterName": "Chapter Name",
       "gui.mangadev.manga_gui.button_ssnssl_chapters": "§n§l◆ Chapters",
       "gui.mangadev.manga_chapter_gui.button_ssnssl": "§n§l\u003c",
-      "gui.mangadev.writer_gui.label_sslmain_event_cannot_be_empty": "§lMain Event Cannot Be Empty.",
       "gui.mangadev.first_chapter_creation.label_ssltext_cannot_be_empty": "§lText Cannot Be Empty!",
-      "advancements.viral.title": "Viral",
+      "gui.mangadev.writer_gui.label_sslmain_event_cannot_be_empty": "§lMain Event Cannot Be Empty.",
       "gui.mangadev.writer_gui.MainEvent": "Main Event",
+      "advancements.viral.title": "Viral",
       "gui.mangadev.writer_gui.tooltip_an_existing_character1": "An Existing Character.",
       "gui.mangadev.manga_gui.button_ssnssl_writer": "§n§l◆ Writer",
       "gui.mangadev.character_gui.Bad": "Bad",
