@@ -23,6 +23,13 @@ public class CreateCharacterProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
+			{
+				double _setval = (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).CharacterAmount + 1;
+				entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.CharacterAmount = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
 			if (entity instanceof Player _player && !_player.level().isClientSide())
 				_player.displayClientMessage(Component.literal(((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).Characters)), false);
 		} else if ((guistate.containsKey("text:CharacterName") ? ((EditBox) guistate.get("text:CharacterName")).getValue() : "").isEmpty()) {

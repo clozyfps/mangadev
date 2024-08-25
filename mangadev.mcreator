@@ -753,6 +753,25 @@
         ]
       },
       "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "CharacterOpinionChatType",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "character_opinion_chat_type",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/mangadev/procedures/CharacterOpinionChatTypeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/ChatTypes"
     }
   ],
   "variable_elements": [
@@ -863,6 +882,12 @@
       "type": "string",
       "scope": "player_persistent",
       "value": ""
+    },
+    {
+      "name": "CharacterAmount",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [],
