@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:lilac"
+    },
+    "title": {
+      "translate": "advancements.it_only_gets_better.title"
+    },
+    "description": {
+      "translate": "advancements.it_only_gets_better.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "it_only_gets_better_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "mangadev:mangaka"
+}

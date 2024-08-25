@@ -1,0 +1,129 @@
+{
+  "_fv": 66,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 0,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "What's Your Manga Called?",
+          "name": "MangaCreate",
+          "width": 120,
+          "height": 20,
+          "x": 150,
+          "y": 98
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "name": "Action",
+          "text": "Action",
+          "x": 6,
+          "y": 8
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "name": "Romance",
+          "text": "Romance",
+          "x": 6,
+          "y": 35
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "name": "SliceOfLife",
+          "text": "Slice Of Life",
+          "x": 6,
+          "y": 62
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "name": "Comedy",
+          "text": "Comedy",
+          "x": 6,
+          "y": 89
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_ssnsslyes",
+          "text": "§n§lYes",
+          "isUndecorated": true,
+          "onClick": {
+            "name": "YesClicked"
+          },
+          "width": 61,
+          "height": 20,
+          "x": 204,
+          "y": 125
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "name": "Horror",
+          "text": "Horror",
+          "x": 6,
+          "y": 116
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_sslyou_can_only_have_1_genre",
+          "text": {
+            "fixedValue": "§lYou Can Only Have 1 Genre!"
+          },
+          "color": {
+            "value": -65485,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "GenreWarningDisplay"
+          },
+          "x": 6,
+          "y": 143
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_ssltext_cannot_be_empty",
+          "text": {
+            "fixedValue": "§lText Cannot Be Empty!"
+          },
+          "color": {
+            "value": -65485,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "MangaNameDisplay"
+          },
+          "x": 150,
+          "y": 80
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

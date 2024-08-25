@@ -1,0 +1,228 @@
+{
+  "_fv": 66,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 0,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Chapter Name",
+          "name": "ChapterName",
+          "width": 120,
+          "height": 20,
+          "x": 150,
+          "y": 107
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Focused Character",
+          "name": "FocusedCharacter",
+          "width": 120,
+          "height": 20,
+          "x": 6,
+          "y": 143
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Side Character",
+          "name": "SideCharacter",
+          "width": 120,
+          "height": 20,
+          "x": 6,
+          "y": 170
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Main Event",
+          "name": "MainEvent",
+          "width": 120,
+          "height": 20,
+          "x": 6,
+          "y": 197
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_sslfocused_character_does_not_exi",
+          "text": {
+            "fixedValue": "§lFocused Character Does Not Exist."
+          },
+          "color": {
+            "value": -65485,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayFocusedCharWarning"
+          },
+          "x": 132,
+          "y": 152
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_sslside_character_does_not_exist",
+          "text": {
+            "fixedValue": "§lSide Character Does Not Exist."
+          },
+          "color": {
+            "value": -65485,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplaySideCharacterTimer"
+          },
+          "x": 132,
+          "y": 179
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_a_existing_character",
+          "text": {
+            "fixedValue": "An Existing Character."
+          },
+          "width": 24,
+          "height": 24,
+          "x": 51,
+          "y": 143
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_an_existing_character",
+          "text": {
+            "fixedValue": "An Existing Character."
+          },
+          "width": 24,
+          "height": 24,
+          "x": 87,
+          "y": 143
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_an_existing_character1",
+          "text": {
+            "fixedValue": "An Existing Character."
+          },
+          "width": 24,
+          "height": 24,
+          "x": 15,
+          "y": 143
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_an_existing_character2",
+          "text": {
+            "fixedValue": "An Existing Character."
+          },
+          "width": 24,
+          "height": 24,
+          "x": 15,
+          "y": 170
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_an_existing_character3",
+          "text": {
+            "fixedValue": "An Existing Character."
+          },
+          "width": 24,
+          "height": 24,
+          "x": 51,
+          "y": 170
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_an_existing_character4",
+          "text": {
+            "fixedValue": "An Existing Character."
+          },
+          "width": 24,
+          "height": 24,
+          "x": 87,
+          "y": 170
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_sslmain_event_cannot_be_empty",
+          "text": {
+            "fixedValue": "§lMain Event Cannot Be Empty."
+          },
+          "color": {
+            "value": -65485,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayMainEventWarning"
+          },
+          "x": 132,
+          "y": 206
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_ssnsslpublish",
+          "text": "§n§lPublish",
+          "isUndecorated": true,
+          "onClick": {
+            "name": "PublishChapter"
+          },
+          "width": 82,
+          "height": 20,
+          "x": 186,
+          "y": 134
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_ssnssl",
+          "text": "§n§l<",
+          "isUndecorated": true,
+          "onClick": {
+            "name": "ReturnToMain"
+          },
+          "width": 51,
+          "height": 20,
+          "x": 393,
+          "y": 8
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

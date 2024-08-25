@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:pink_petals"
+    },
+    "title": {
+      "translate": "advancements.noticed.title"
+    },
+    "description": {
+      "translate": "advancements.noticed.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "noticed_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "mangadev:it_only_gets_better"
+}

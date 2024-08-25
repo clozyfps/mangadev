@@ -1,0 +1,12 @@
+{
+  "_fv": 66,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "M",
+    "keyBindingName": "Manga Menu",
+    "keyBindingCategoryKey": "manga",
+    "onKeyPressed": {
+      "name": "MangaMenuOnKeyPressed"
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "_fv": 66,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 0,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Character Name",
+          "name": "CharacterName",
+          "width": 120,
+          "height": 20,
+          "x": 150,
+          "y": 107
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_empty",
+          "text": "+",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "CreateCharacter"
+          },
+          "width": 30,
+          "height": 20,
+          "x": 276,
+          "y": 107
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_sslcharacter_created",
+          "text": {
+            "fixedValue": "§lCharacter Created!"
+          },
+          "color": {
+            "value": -13369549,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayCharacterWarning"
+          },
+          "x": 159,
+          "y": 89
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_ssnssl",
+          "text": "§n§l<",
+          "isUndecorated": true,
+          "onClick": {
+            "name": "ReturnToMain"
+          },
+          "width": 51,
+          "height": 20,
+          "x": 393,
+          "y": 8
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_sslcannot_be_empty",
+          "text": {
+            "fixedValue": "§lCannot Be Empty!"
+          },
+          "color": {
+            "value": -65485,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "EmptyCharacterWarning"
+          },
+          "x": 159,
+          "y": 89
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

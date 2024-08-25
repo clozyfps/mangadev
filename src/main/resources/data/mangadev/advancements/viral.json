@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:peony"
+    },
+    "title": {
+      "translate": "advancements.viral.title"
+    },
+    "description": {
+      "translate": "advancements.viral.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "viral_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "mangadev:mangaka"
+}
