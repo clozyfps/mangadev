@@ -8,6 +8,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.PlainTextButton;
 import net.minecraft.client.gui.components.EditBox;
+import net.minecraft.client.gui.components.Checkbox;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.Minecraft;
@@ -28,6 +29,9 @@ public class CharacterGUIScreen extends AbstractContainerScreen<CharacterGUIMenu
 	private final int x, y, z;
 	private final Player entity;
 	EditBox CharacterName;
+	Checkbox Hero;
+	Checkbox Villain;
+	Checkbox Neutral;
 	Button button_empty;
 	Button button_ssnssl;
 
@@ -135,5 +139,14 @@ public class CharacterGUIScreen extends AbstractContainerScreen<CharacterGUIMenu
 		}, this.font);
 		guistate.put("button:button_ssnssl", button_ssnssl);
 		this.addRenderableWidget(button_ssnssl);
+		Hero = new Checkbox(this.leftPos + -64, this.topPos + 97, 20, 20, Component.translatable("gui.mangadev.character_gui.Hero"), false);
+		guistate.put("checkbox:Hero", Hero);
+		this.addRenderableWidget(Hero);
+		Villain = new Checkbox(this.leftPos + -64, this.topPos + 124, 20, 20, Component.translatable("gui.mangadev.character_gui.Villain"), false);
+		guistate.put("checkbox:Villain", Villain);
+		this.addRenderableWidget(Villain);
+		Neutral = new Checkbox(this.leftPos + -64, this.topPos + 151, 20, 20, Component.translatable("gui.mangadev.character_gui.Neutral"), false);
+		guistate.put("checkbox:Neutral", Neutral);
+		this.addRenderableWidget(Neutral);
 	}
 }

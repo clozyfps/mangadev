@@ -27,7 +27,7 @@
           "name": "Action",
           "text": "Action",
           "x": 6,
-          "y": 8
+          "y": 26
         }
       },
       {
@@ -36,7 +36,7 @@
           "name": "Romance",
           "text": "Romance",
           "x": 6,
-          "y": 35
+          "y": 53
         }
       },
       {
@@ -45,7 +45,7 @@
           "name": "SliceOfLife",
           "text": "Slice Of Life",
           "x": 6,
-          "y": 62
+          "y": 80
         }
       },
       {
@@ -54,7 +54,7 @@
           "name": "Comedy",
           "text": "Comedy",
           "x": 6,
-          "y": 89
+          "y": 107
         }
       },
       {
@@ -78,7 +78,7 @@
           "name": "Horror",
           "text": "Horror",
           "x": 6,
-          "y": 116
+          "y": 134
         }
       },
       {
@@ -86,17 +86,14 @@
         "data": {
           "name": "label_sslyou_can_only_have_1_genre",
           "text": {
-            "fixedValue": "§lYou Can Only Have 1 Genre!"
+            "fixedValue": "§lMain Genre"
           },
           "color": {
-            "value": -65485,
+            "value": -1,
             "falpha": 0.0
           },
-          "displayCondition": {
-            "name": "GenreWarningDisplay"
-          },
           "x": 6,
-          "y": 143
+          "y": 8
         }
       },
       {
@@ -115,6 +112,66 @@
           },
           "x": 150,
           "y": 80
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_sslsecondary_genre",
+          "text": {
+            "fixedValue": "§lSecondary Genre"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 330,
+          "y": 8
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "name": "ActionSecond",
+          "text": "Action",
+          "x": 330,
+          "y": 26
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "name": "RomanceSecond",
+          "text": "Romance",
+          "x": 330,
+          "y": 53
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "name": "SliceOfLifeSecond",
+          "text": "Slice Of Life",
+          "x": 330,
+          "y": 80
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "name": "ComedySecond",
+          "text": "Comedy",
+          "x": 330,
+          "y": 107
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "name": "HorrorSecond",
+          "text": "Horror",
+          "x": 330,
+          "y": 134
         }
       }
     ],

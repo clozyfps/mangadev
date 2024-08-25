@@ -902,6 +902,36 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "HeroCharacters",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "DeadCharacters",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "VillainCharacters",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "NeutralCharacters",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "ShortMangaName",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
     }
   ],
   "sound_elements": [],
@@ -968,13 +998,8 @@
     "name": "~",
     "children": [
       {
-        "name": "GUI",
-        "children": [
-          {
-            "name": "Procedures",
-            "children": []
-          }
-        ]
+        "name": "Achievement",
+        "children": []
       },
       {
         "name": "Keybind",
@@ -999,8 +1024,13 @@
         "children": []
       },
       {
-        "name": "Achievement",
-        "children": []
+        "name": "GUI",
+        "children": [
+          {
+            "name": "Procedures",
+            "children": []
+          }
+        ]
       }
     ]
   },

@@ -17,7 +17,6 @@ import net.minecraft.client.Minecraft;
 
 import net.mcreator.mangadev.world.inventory.FirstChapterCreationMenu;
 import net.mcreator.mangadev.procedures.MangaNameDisplayProcedure;
-import net.mcreator.mangadev.procedures.GenreWarningDisplayProcedure;
 import net.mcreator.mangadev.network.FirstChapterCreationButtonMessage;
 import net.mcreator.mangadev.MangadevMod;
 
@@ -36,6 +35,11 @@ public class FirstChapterCreationScreen extends AbstractContainerScreen<FirstCha
 	Checkbox SliceOfLife;
 	Checkbox Comedy;
 	Checkbox Horror;
+	Checkbox ActionSecond;
+	Checkbox RomanceSecond;
+	Checkbox SliceOfLifeSecond;
+	Checkbox ComedySecond;
+	Checkbox HorrorSecond;
 	Button button_ssnsslyes;
 
 	public FirstChapterCreationScreen(FirstChapterCreationMenu container, Inventory inventory, Component text) {
@@ -94,10 +98,10 @@ public class FirstChapterCreationScreen extends AbstractContainerScreen<FirstCha
 
 	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
-		if (GenreWarningDisplayProcedure.execute(entity))
-			guiGraphics.drawString(this.font, Component.translatable("gui.mangadev.first_chapter_creation.label_sslyou_can_only_have_1_genre"), -208, 106, -65485, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.mangadev.first_chapter_creation.label_sslyou_can_only_have_1_genre"), -208, -29, -1, false);
 		if (MangaNameDisplayProcedure.execute(entity))
 			guiGraphics.drawString(this.font, Component.translatable("gui.mangadev.first_chapter_creation.label_ssltext_cannot_be_empty"), -64, 43, -65485, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.mangadev.first_chapter_creation.label_sslsecondary_genre"), 116, -29, -1, false);
 	}
 
 	@Override
@@ -134,20 +138,35 @@ public class FirstChapterCreationScreen extends AbstractContainerScreen<FirstCha
 		}, this.font);
 		guistate.put("button:button_ssnsslyes", button_ssnsslyes);
 		this.addRenderableWidget(button_ssnsslyes);
-		Action = new Checkbox(this.leftPos + -208, this.topPos + -29, 20, 20, Component.translatable("gui.mangadev.first_chapter_creation.Action"), false);
+		Action = new Checkbox(this.leftPos + -208, this.topPos + -11, 20, 20, Component.translatable("gui.mangadev.first_chapter_creation.Action"), false);
 		guistate.put("checkbox:Action", Action);
 		this.addRenderableWidget(Action);
-		Romance = new Checkbox(this.leftPos + -208, this.topPos + -2, 20, 20, Component.translatable("gui.mangadev.first_chapter_creation.Romance"), false);
+		Romance = new Checkbox(this.leftPos + -208, this.topPos + 16, 20, 20, Component.translatable("gui.mangadev.first_chapter_creation.Romance"), false);
 		guistate.put("checkbox:Romance", Romance);
 		this.addRenderableWidget(Romance);
-		SliceOfLife = new Checkbox(this.leftPos + -208, this.topPos + 25, 20, 20, Component.translatable("gui.mangadev.first_chapter_creation.SliceOfLife"), false);
+		SliceOfLife = new Checkbox(this.leftPos + -208, this.topPos + 43, 20, 20, Component.translatable("gui.mangadev.first_chapter_creation.SliceOfLife"), false);
 		guistate.put("checkbox:SliceOfLife", SliceOfLife);
 		this.addRenderableWidget(SliceOfLife);
-		Comedy = new Checkbox(this.leftPos + -208, this.topPos + 52, 20, 20, Component.translatable("gui.mangadev.first_chapter_creation.Comedy"), false);
+		Comedy = new Checkbox(this.leftPos + -208, this.topPos + 70, 20, 20, Component.translatable("gui.mangadev.first_chapter_creation.Comedy"), false);
 		guistate.put("checkbox:Comedy", Comedy);
 		this.addRenderableWidget(Comedy);
-		Horror = new Checkbox(this.leftPos + -208, this.topPos + 79, 20, 20, Component.translatable("gui.mangadev.first_chapter_creation.Horror"), false);
+		Horror = new Checkbox(this.leftPos + -208, this.topPos + 97, 20, 20, Component.translatable("gui.mangadev.first_chapter_creation.Horror"), false);
 		guistate.put("checkbox:Horror", Horror);
 		this.addRenderableWidget(Horror);
+		ActionSecond = new Checkbox(this.leftPos + 116, this.topPos + -11, 20, 20, Component.translatable("gui.mangadev.first_chapter_creation.ActionSecond"), false);
+		guistate.put("checkbox:ActionSecond", ActionSecond);
+		this.addRenderableWidget(ActionSecond);
+		RomanceSecond = new Checkbox(this.leftPos + 116, this.topPos + 16, 20, 20, Component.translatable("gui.mangadev.first_chapter_creation.RomanceSecond"), false);
+		guistate.put("checkbox:RomanceSecond", RomanceSecond);
+		this.addRenderableWidget(RomanceSecond);
+		SliceOfLifeSecond = new Checkbox(this.leftPos + 116, this.topPos + 43, 20, 20, Component.translatable("gui.mangadev.first_chapter_creation.SliceOfLifeSecond"), false);
+		guistate.put("checkbox:SliceOfLifeSecond", SliceOfLifeSecond);
+		this.addRenderableWidget(SliceOfLifeSecond);
+		ComedySecond = new Checkbox(this.leftPos + 116, this.topPos + 70, 20, 20, Component.translatable("gui.mangadev.first_chapter_creation.ComedySecond"), false);
+		guistate.put("checkbox:ComedySecond", ComedySecond);
+		this.addRenderableWidget(ComedySecond);
+		HorrorSecond = new Checkbox(this.leftPos + 116, this.topPos + 97, 20, 20, Component.translatable("gui.mangadev.first_chapter_creation.HorrorSecond"), false);
+		guistate.put("checkbox:HorrorSecond", HorrorSecond);
+		this.addRenderableWidget(HorrorSecond);
 	}
 }

@@ -95,6 +95,11 @@ public class MangadevModVariables {
 			clone.RecentTweet = original.RecentTweet;
 			clone.RandomUser = original.RandomUser;
 			clone.CharacterAmount = original.CharacterAmount;
+			clone.HeroCharacters = original.HeroCharacters;
+			clone.DeadCharacters = original.DeadCharacters;
+			clone.VillainCharacters = original.VillainCharacters;
+			clone.NeutralCharacters = original.NeutralCharacters;
+			clone.ShortMangaName = original.ShortMangaName;
 			if (!event.isWasDeath()) {
 			}
 			if (!event.getEntity().level().isClientSide()) {
@@ -155,6 +160,11 @@ public class MangadevModVariables {
 		public String RecentTweet = "";
 		public String RandomUser = "";
 		public double CharacterAmount = 0;
+		public String HeroCharacters = "";
+		public String DeadCharacters = "";
+		public String VillainCharacters = "";
+		public String NeutralCharacters = "";
+		public String ShortMangaName = "";
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -182,6 +192,11 @@ public class MangadevModVariables {
 			nbt.putString("RecentTweet", RecentTweet);
 			nbt.putString("RandomUser", RandomUser);
 			nbt.putDouble("CharacterAmount", CharacterAmount);
+			nbt.putString("HeroCharacters", HeroCharacters);
+			nbt.putString("DeadCharacters", DeadCharacters);
+			nbt.putString("VillainCharacters", VillainCharacters);
+			nbt.putString("NeutralCharacters", NeutralCharacters);
+			nbt.putString("ShortMangaName", ShortMangaName);
 			return nbt;
 		}
 
@@ -206,6 +221,11 @@ public class MangadevModVariables {
 			RecentTweet = nbt.getString("RecentTweet");
 			RandomUser = nbt.getString("RandomUser");
 			CharacterAmount = nbt.getDouble("CharacterAmount");
+			HeroCharacters = nbt.getString("HeroCharacters");
+			DeadCharacters = nbt.getString("DeadCharacters");
+			VillainCharacters = nbt.getString("VillainCharacters");
+			NeutralCharacters = nbt.getString("NeutralCharacters");
+			ShortMangaName = nbt.getString("ShortMangaName");
 		}
 	}
 
@@ -258,6 +278,11 @@ public class MangadevModVariables {
 					variables.RecentTweet = message.data.RecentTweet;
 					variables.RandomUser = message.data.RandomUser;
 					variables.CharacterAmount = message.data.CharacterAmount;
+					variables.HeroCharacters = message.data.HeroCharacters;
+					variables.DeadCharacters = message.data.DeadCharacters;
+					variables.VillainCharacters = message.data.VillainCharacters;
+					variables.NeutralCharacters = message.data.NeutralCharacters;
+					variables.ShortMangaName = message.data.ShortMangaName;
 				}
 			});
 			context.setPacketHandled(true);

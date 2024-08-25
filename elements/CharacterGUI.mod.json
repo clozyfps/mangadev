@@ -86,6 +86,33 @@
           "x": 159,
           "y": 89
         }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "name": "Hero",
+          "text": "Hero",
+          "x": 150,
+          "y": 134
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "name": "Villain",
+          "text": "Villain",
+          "x": 150,
+          "y": 161
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "name": "Neutral",
+          "text": "Neutral",
+          "x": 150,
+          "y": 188
+        }
       }
     ],
     "gridSettings": {
