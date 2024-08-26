@@ -828,6 +828,111 @@
         ]
       },
       "path": "~/Commands/Procedures"
+    },
+    {
+      "name": "ArcNameCreationDisplay",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "arc_name_creation_display",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/mangadev/procedures/ArcNameCreationDisplayProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "ArcChapterCountDisplay",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "arc_chapter_count_display",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/mangadev/procedures/ArcChapterCountDisplayProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayArcRating",
+      "type": "procedure",
+      "compiles": false,
+      "locked_code": false,
+      "registry_name": "display_arc_rating",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/mangadev/procedures/DisplayArcRatingProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayArcName",
+      "type": "procedure",
+      "compiles": false,
+      "locked_code": false,
+      "registry_name": "display_arc_name",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/mangadev/procedures/DisplayArcNameProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "TypeWarningDisplay",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "type_warning_display",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/mangadev/procedures/TypeWarningDisplayProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "ArcEndDisplay",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "arc_end_display",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/mangadev/procedures/ArcEndDisplayProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
     }
   ],
   "variable_elements": [
@@ -1010,6 +1115,36 @@
       "type": "string",
       "scope": "player_persistent",
       "value": "\"\""
+    },
+    {
+      "name": "CurrentArc",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "ArcRating",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "MangaType",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    },
+    {
+      "name": "ArcEndChapter",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "CurrentArcChapters",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [],

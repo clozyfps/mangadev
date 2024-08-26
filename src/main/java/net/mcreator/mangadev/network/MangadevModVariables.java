@@ -106,6 +106,11 @@ public class MangadevModVariables {
 			clone.VillainCharacters = original.VillainCharacters;
 			clone.Yen = original.Yen;
 			clone.SecondLetterRandomizer = original.SecondLetterRandomizer;
+			clone.CurrentArc = original.CurrentArc;
+			clone.ArcRating = original.ArcRating;
+			clone.MangaType = original.MangaType;
+			clone.ArcEndChapter = original.ArcEndChapter;
+			clone.CurrentArcChapters = original.CurrentArcChapters;
 			if (!event.isWasDeath()) {
 			}
 			if (!event.getEntity().level().isClientSide()) {
@@ -177,6 +182,11 @@ public class MangadevModVariables {
 		public String VillainCharacters = "";
 		public double Yen = 0;
 		public String SecondLetterRandomizer = "\"\"";
+		public String CurrentArc = "";
+		public double ArcRating = 0.0;
+		public String MangaType = "\"\"";
+		public boolean ArcEndChapter = false;
+		public double CurrentArcChapters = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -215,6 +225,11 @@ public class MangadevModVariables {
 			nbt.putString("VillainCharacters", VillainCharacters);
 			nbt.putDouble("Yen", Yen);
 			nbt.putString("SecondLetterRandomizer", SecondLetterRandomizer);
+			nbt.putString("CurrentArc", CurrentArc);
+			nbt.putDouble("ArcRating", ArcRating);
+			nbt.putString("MangaType", MangaType);
+			nbt.putBoolean("ArcEndChapter", ArcEndChapter);
+			nbt.putDouble("CurrentArcChapters", CurrentArcChapters);
 			return nbt;
 		}
 
@@ -250,6 +265,11 @@ public class MangadevModVariables {
 			VillainCharacters = nbt.getString("VillainCharacters");
 			Yen = nbt.getDouble("Yen");
 			SecondLetterRandomizer = nbt.getString("SecondLetterRandomizer");
+			CurrentArc = nbt.getString("CurrentArc");
+			ArcRating = nbt.getDouble("ArcRating");
+			MangaType = nbt.getString("MangaType");
+			ArcEndChapter = nbt.getBoolean("ArcEndChapter");
+			CurrentArcChapters = nbt.getDouble("CurrentArcChapters");
 		}
 	}
 
@@ -313,6 +333,11 @@ public class MangadevModVariables {
 					variables.VillainCharacters = message.data.VillainCharacters;
 					variables.Yen = message.data.Yen;
 					variables.SecondLetterRandomizer = message.data.SecondLetterRandomizer;
+					variables.CurrentArc = message.data.CurrentArc;
+					variables.ArcRating = message.data.ArcRating;
+					variables.MangaType = message.data.MangaType;
+					variables.ArcEndChapter = message.data.ArcEndChapter;
+					variables.CurrentArcChapters = message.data.CurrentArcChapters;
 				}
 			});
 			context.setPacketHandled(true);

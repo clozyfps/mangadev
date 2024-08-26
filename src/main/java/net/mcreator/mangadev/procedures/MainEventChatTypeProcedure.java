@@ -1,12 +1,6 @@
 package net.mcreator.mangadev.procedures;
 
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.util.RandomSource;
-import net.minecraft.util.Mth;
-import net.minecraft.network.chat.Component;
-
-import net.mcreator.mangadev.network.MangadevModVariables;
+import net.minecraftforge.eventbus.api.Event;
 
 public class MainEventChatTypeProcedure {
 	public static void execute(Entity entity) {

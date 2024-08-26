@@ -17,8 +17,8 @@
           "name": "MangaCreate",
           "width": 120,
           "height": 20,
-          "x": 150,
-          "y": 98
+          "x": 6,
+          "y": 170
         }
       },
       {
@@ -61,15 +61,15 @@
         "type": "button",
         "data": {
           "name": "button_ssnsslyes",
-          "text": "§n§lYes",
+          "text": "§n§lFinish",
           "isUndecorated": true,
           "onClick": {
             "name": "YesClicked"
           },
           "width": 61,
           "height": 20,
-          "x": 204,
-          "y": 125
+          "x": 6,
+          "y": 224
         }
       },
       {
@@ -86,7 +86,8 @@
         "data": {
           "name": "label_sslyou_can_only_have_1_genre",
           "text": {
-            "fixedValue": "§lMain Genre"
+            "fixedValue": "§lMain Genre",
+            "name": "GenreWarningDisplay"
           },
           "color": {
             "value": -1,
@@ -104,14 +105,14 @@
             "fixedValue": "§lText Cannot Be Empty!"
           },
           "color": {
-            "value": -65485,
+            "value": -65536,
             "falpha": 0.0
           },
           "displayCondition": {
             "name": "MangaNameDisplay"
           },
-          "x": 150,
-          "y": 80
+          "x": 132,
+          "y": 170
         }
       },
       {
@@ -119,59 +120,89 @@
         "data": {
           "name": "label_sslsecondary_genre",
           "text": {
-            "fixedValue": "§lSecondary Genre"
+            "fixedValue": "§lType",
+            "name": "TypeWarningDisplay"
           },
           "color": {
             "value": -1,
             "falpha": 0.0
           },
-          "x": 330,
+          "x": 150,
           "y": 8
         }
       },
       {
         "type": "checkbox",
         "data": {
-          "name": "ActionSecond",
-          "text": "Action",
-          "x": 330,
+          "name": "Isekai",
+          "text": "Isekai",
+          "x": 150,
           "y": 26
         }
       },
       {
         "type": "checkbox",
         "data": {
-          "name": "RomanceSecond",
-          "text": "Romance",
-          "x": 330,
+          "name": "BattleShonen",
+          "text": "Battle Shonen",
+          "x": 150,
           "y": 53
         }
       },
       {
         "type": "checkbox",
         "data": {
-          "name": "SliceOfLifeSecond",
-          "text": "Slice Of Life",
-          "x": 330,
+          "name": "Shojo",
+          "text": "Shojo",
+          "x": 150,
           "y": 80
         }
       },
       {
         "type": "checkbox",
         "data": {
-          "name": "ComedySecond",
-          "text": "Comedy",
-          "x": 330,
+          "name": "Seinen",
+          "text": "Seinen",
+          "x": 150,
           "y": 107
         }
       },
       {
         "type": "checkbox",
         "data": {
-          "name": "HorrorSecond",
-          "text": "Horror",
-          "x": 330,
+          "name": "Sports",
+          "text": "Sports",
+          "x": 150,
           "y": 134
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Starting Arc Name",
+          "name": "ArcName",
+          "width": 120,
+          "height": 20,
+          "x": 6,
+          "y": 197
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_ssltext_cannot_be_empty1",
+          "text": {
+            "fixedValue": "§lText Cannot Be Empty!"
+          },
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "ArcNameCreationDisplay"
+          },
+          "x": 132,
+          "y": 197
         }
       }
     ],

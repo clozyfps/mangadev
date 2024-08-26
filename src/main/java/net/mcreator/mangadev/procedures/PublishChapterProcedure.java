@@ -1,33 +1,6 @@
 package net.mcreator.mangadev.procedures;
 
-import net.minecraftforge.network.NetworkHooks;
-
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.MenuProvider;
-import net.minecraft.util.RandomSource;
-import net.minecraft.util.Mth;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.core.BlockPos;
-import net.minecraft.client.gui.components.EditBox;
-import net.minecraft.client.Minecraft;
-import net.minecraft.advancements.AdvancementProgress;
-import net.minecraft.advancements.Advancement;
-
-import net.mcreator.mangadev.world.inventory.MangaChapterGUIMenu;
-import net.mcreator.mangadev.network.MangadevModVariables;
-
-import java.util.HashMap;
-
-import io.netty.buffer.Unpooled;
+import net.minecraftforge.eventbus.api.Event;
 
 public class PublishChapterProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, HashMap guistate) {
@@ -38,27 +11,6 @@ public class PublishChapterProcedure {
 			if (((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).Characters)
 					.contains(guistate.containsKey("text:SideCharacter") ? ((EditBox) guistate.get("text:SideCharacter")).getValue() : "")) {
 				if (!(guistate.containsKey("text:MainEvent") ? ((EditBox) guistate.get("text:MainEvent")).getValue() : "").isEmpty()) {
-					{
-						double _setval = 0;
-						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.DiscoveryRate = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					{
-						double _setval = 0;
-						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.RecentChapterFans = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					{
-						double _setval = 0;
-						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.RecentChapterViews = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
 					{
 						String _setval = guistate.containsKey("text:ChapterName") ? ((EditBox) guistate.get("text:ChapterName")).getValue() : "";
 						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -102,16 +54,23 @@ public class PublishChapterProcedure {
 						}, _bpos);
 					}
 					{
-						double _setval = Mth.nextInt(RandomSource.create(), 1, 5);
+						double _setval = (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).Chapters + 1;
 						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.RecentRating = _setval;
+							capability.Chapters = _setval;
 							capability.syncPlayerVariables(entity);
 						});
 					}
 					{
-						double _setval = (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).Chapters + 1;
+						double _setval = (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).CurrentArcChapters + 1;
 						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.Chapters = _setval;
+							capability.CurrentArcChapters = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						double _setval = Mth.nextInt(RandomSource.create(), 1, 5);
+						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.RecentRating = _setval;
 							capability.syncPlayerVariables(entity);
 						});
 					}
@@ -130,6 +89,19 @@ public class PublishChapterProcedure {
 							Minecraft.getInstance().gameRenderer.displayItemActivation(new ItemStack(Items.EMERALD));
 						if (entity instanceof Player _player)
 							_player.closeContainer();
+					}
+					if (guistate.containsKey("checkbox:EndArc") && ((Checkbox) guistate.get("checkbox:EndArc")).selected()
+							&& (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).CurrentArcChapters > 10) {
+						{
+							boolean _setval = true;
+							entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.ArcEndChapter = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+					} else if (guistate.containsKey("checkbox:EndArc") && ((Checkbox) guistate.get("checkbox:EndArc")).selected()
+							&& (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).CurrentArcChapters <= 10) {
+						entity.getPersistentData().putDouble("arcendbadtimer", 20);
 					}
 				} else {
 					entity.getPersistentData().putDouble("maineventtimer", 20);
