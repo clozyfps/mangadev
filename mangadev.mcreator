@@ -680,7 +680,12 @@
         "files": [
           "src/main/java/net/mcreator/mangadev/procedures/TweetTickProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/Procedures"
     },
@@ -783,18 +788,49 @@
         "files": [
           "src/main/java/net/mcreator/mangadev/procedures/MainEventChatTypeProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/Procedures/ChatTypes"
+    },
+    {
+      "name": "MangakaDev",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mangaka_dev",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/mangadev/command/MangakaDevCommand.java"
+        ]
+      },
+      "path": "~/Commands"
+    },
+    {
+      "name": "FanSet",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fan_set",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/mangadev/procedures/FanSetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Commands/Procedures"
     }
   ],
   "variable_elements": [
-    {
-      "name": "Fans",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0"
-    },
     {
       "name": "Chapters",
       "type": "number",
@@ -802,34 +838,64 @@
       "value": "0"
     },
     {
-      "name": "Yen",
+      "name": "CharacterAmount",
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
     },
     {
-      "name": "RecentChapter",
+      "name": "Characters",
       "type": "string",
       "scope": "player_persistent",
       "value": ""
     },
     {
-      "name": "RecentRating",
+      "name": "DeadCharacters",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "DiscoveryRate",
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
     },
     {
-      "name": "RecentChapterViews",
+      "name": "Fans",
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
     },
     {
-      "name": "RecentChapterFans",
-      "type": "number",
+      "name": "FifthLetterRandomizer",
+      "type": "string",
       "scope": "player_persistent",
-      "value": "0"
+      "value": ""
+    },
+    {
+      "name": "FocusedCharacter",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "FourthLetterRandomizer",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "HeroCharacters",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "MainEvent",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
     },
     {
       "name": "MangaGenre",
@@ -844,79 +910,7 @@
       "value": ""
     },
     {
-      "name": "Characters",
-      "type": "string",
-      "scope": "player_persistent",
-      "value": ""
-    },
-    {
-      "name": "FocusedCharacter",
-      "type": "string",
-      "scope": "player_persistent",
-      "value": ""
-    },
-    {
-      "name": "SideCharacter",
-      "type": "string",
-      "scope": "player_persistent",
-      "value": ""
-    },
-    {
-      "name": "MainEvent",
-      "type": "string",
-      "scope": "player_persistent",
-      "value": ""
-    },
-    {
-      "name": "PopularityGeneration",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0"
-    },
-    {
-      "name": "PopularityAuto",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0"
-    },
-    {
-      "name": "DiscoveryRate",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0"
-    },
-    {
-      "name": "RecentTweet",
-      "type": "string",
-      "scope": "player_persistent",
-      "value": ""
-    },
-    {
-      "name": "RandomUser",
-      "type": "string",
-      "scope": "player_persistent",
-      "value": ""
-    },
-    {
-      "name": "CharacterAmount",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0"
-    },
-    {
-      "name": "HeroCharacters",
-      "type": "string",
-      "scope": "player_persistent",
-      "value": ""
-    },
-    {
-      "name": "DeadCharacters",
-      "type": "string",
-      "scope": "player_persistent",
-      "value": ""
-    },
-    {
-      "name": "VillainCharacters",
+      "name": "ThirdLetterRandomizer",
       "type": "string",
       "scope": "player_persistent",
       "value": ""
@@ -928,10 +922,94 @@
       "value": ""
     },
     {
+      "name": "PopularityAuto",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "PopularityGeneration",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "RandomUser",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "RecentChapter",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "RecentChapterFans",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "RecentChapterViews",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "RecentRating",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "RecentTweet",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
       "name": "ShortMangaName",
       "type": "string",
       "scope": "player_persistent",
       "value": ""
+    },
+    {
+      "name": "SideCharacter",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "SixthLetterRandomizer",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "StarterLetterRandomizer",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "VillainCharacters",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "Yen",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "SecondLetterRandomizer",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
     }
   ],
   "sound_elements": [],
@@ -944,10 +1022,10 @@
       "gui.mangadev.writer_gui.ChapterName": "Chapter Name",
       "gui.mangadev.manga_gui.button_ssnssl_chapters": "§n§l◆ Chapters",
       "gui.mangadev.manga_chapter_gui.button_ssnssl": "§n§l\u003c",
-      "gui.mangadev.first_chapter_creation.label_ssltext_cannot_be_empty": "§lText Cannot Be Empty!",
       "gui.mangadev.writer_gui.label_sslmain_event_cannot_be_empty": "§lMain Event Cannot Be Empty.",
-      "gui.mangadev.writer_gui.MainEvent": "Main Event",
+      "gui.mangadev.first_chapter_creation.label_ssltext_cannot_be_empty": "§lText Cannot Be Empty!",
       "advancements.viral.title": "Viral",
+      "gui.mangadev.writer_gui.MainEvent": "Main Event",
       "gui.mangadev.writer_gui.tooltip_an_existing_character1": "An Existing Character.",
       "gui.mangadev.manga_gui.button_ssnssl_writer": "§n§l◆ Writer",
       "gui.mangadev.character_gui.Bad": "Bad",
@@ -1025,6 +1103,15 @@
       },
       {
         "name": "GUI",
+        "children": [
+          {
+            "name": "Procedures",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Commands",
         "children": [
           {
             "name": "Procedures",
