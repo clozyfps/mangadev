@@ -3,12 +3,12 @@ package net.mcreator.mangadev.procedures;
 import net.minecraft.world.entity.Entity;
 
 public class GenreWarningDisplayProcedure {
-	public static boolean execute(Entity entity) {
+	public static String execute(Entity entity) {
 		if (entity == null)
-			return false;
+			return "";
 		if (entity.getPersistentData().getDouble("genretimer") > 0) {
-			return true;
+			return "\u00A7l2 or more genres selected!";
 		}
-		return false;
+		return "\u00A7lMain Genre";
 	}
 }

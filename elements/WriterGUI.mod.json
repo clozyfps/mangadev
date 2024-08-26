@@ -17,8 +17,8 @@
           "name": "ChapterName",
           "width": 120,
           "height": 20,
-          "x": 150,
-          "y": 107
+          "x": 303,
+          "y": 215
         }
       },
       {
@@ -29,7 +29,7 @@
           "width": 120,
           "height": 20,
           "x": 6,
-          "y": 143
+          "y": 17
         }
       },
       {
@@ -40,7 +40,7 @@
           "width": 120,
           "height": 20,
           "x": 6,
-          "y": 170
+          "y": 44
         }
       },
       {
@@ -51,7 +51,7 @@
           "width": 120,
           "height": 20,
           "x": 6,
-          "y": 197
+          "y": 71
         }
       },
       {
@@ -62,14 +62,14 @@
             "fixedValue": "§lFocused Character Does Not Exist."
           },
           "color": {
-            "value": -65485,
+            "value": -65536,
             "falpha": 0.0
           },
           "displayCondition": {
             "name": "DisplayFocusedCharWarning"
           },
           "x": 132,
-          "y": 152
+          "y": 17
         }
       },
       {
@@ -80,14 +80,14 @@
             "fixedValue": "§lSide Character Does Not Exist."
           },
           "color": {
-            "value": -65485,
+            "value": -65536,
             "falpha": 0.0
           },
           "displayCondition": {
             "name": "DisplaySideCharacterTimer"
           },
           "x": 132,
-          "y": 179
+          "y": 44
         }
       },
       {
@@ -100,7 +100,7 @@
           "width": 24,
           "height": 24,
           "x": 51,
-          "y": 143
+          "y": 17
         }
       },
       {
@@ -113,7 +113,7 @@
           "width": 24,
           "height": 24,
           "x": 87,
-          "y": 143
+          "y": 17
         }
       },
       {
@@ -126,7 +126,7 @@
           "width": 24,
           "height": 24,
           "x": 15,
-          "y": 143
+          "y": 17
         }
       },
       {
@@ -139,7 +139,7 @@
           "width": 24,
           "height": 24,
           "x": 15,
-          "y": 170
+          "y": 44
         }
       },
       {
@@ -152,7 +152,7 @@
           "width": 24,
           "height": 24,
           "x": 51,
-          "y": 170
+          "y": 44
         }
       },
       {
@@ -165,7 +165,7 @@
           "width": 24,
           "height": 24,
           "x": 87,
-          "y": 170
+          "y": 44
         }
       },
       {
@@ -176,14 +176,14 @@
             "fixedValue": "§lMain Event Cannot Be Empty."
           },
           "color": {
-            "value": -65485,
+            "value": -65536,
             "falpha": 0.0
           },
           "displayCondition": {
             "name": "DisplayMainEventWarning"
           },
           "x": 132,
-          "y": 206
+          "y": 71
         }
       },
       {
@@ -197,8 +197,8 @@
           },
           "width": 82,
           "height": 20,
-          "x": 186,
-          "y": 134
+          "x": 303,
+          "y": 197
         }
       },
       {
@@ -214,6 +214,87 @@
           "height": 20,
           "x": 393,
           "y": 8
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_ssnsslarc_settings",
+          "text": {
+            "fixedValue": "§n§lArc Settings"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 303,
+          "y": 179
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_arcvalue",
+          "text": {
+            "fixedValue": "ArcValue",
+            "name": "DisplayArcName"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 6,
+          "y": 98
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_ss1arcrating",
+          "text": {
+            "fixedValue": "ArcRating",
+            "name": "DisplayArcRating"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 6,
+          "y": 116
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_sslarc_too_short_to_end",
+          "text": {
+            "fixedValue": "§lArc too short to end!"
+          },
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "ArcEndDisplay"
+          },
+          "x": 6,
+          "y": 152
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_arcchaptercount",
+          "text": {
+            "fixedValue": "ArcChapterCount",
+            "name": "ArcChapterCountDisplay"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 6,
+          "y": 134
         }
       }
     ],

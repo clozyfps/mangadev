@@ -100,6 +100,11 @@ public class MangadevModVariables {
 			clone.NeutralCharacters = original.NeutralCharacters;
 			clone.DeadCharacters = original.DeadCharacters;
 			clone.ShortMangaName = original.ShortMangaName;
+			clone.CurrentArc = original.CurrentArc;
+			clone.ArcRating = original.ArcRating;
+			clone.CurrentArcChapters = original.CurrentArcChapters;
+			clone.ArcEndChapter = original.ArcEndChapter;
+			clone.MangaType = original.MangaType;
 			if (!event.isWasDeath()) {
 			}
 			if (!event.getEntity().level().isClientSide()) {
@@ -165,6 +170,11 @@ public class MangadevModVariables {
 		public String NeutralCharacters = "";
 		public String DeadCharacters = "";
 		public String ShortMangaName = "";
+		public String CurrentArc = "";
+		public double ArcRating = 0.0;
+		public double CurrentArcChapters = 0;
+		public boolean ArcEndChapter = false;
+		public String MangaType = "\"\"";
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -197,6 +207,11 @@ public class MangadevModVariables {
 			nbt.putString("NeutralCharacters", NeutralCharacters);
 			nbt.putString("DeadCharacters", DeadCharacters);
 			nbt.putString("ShortMangaName", ShortMangaName);
+			nbt.putString("CurrentArc", CurrentArc);
+			nbt.putDouble("ArcRating", ArcRating);
+			nbt.putDouble("CurrentArcChapters", CurrentArcChapters);
+			nbt.putBoolean("ArcEndChapter", ArcEndChapter);
+			nbt.putString("MangaType", MangaType);
 			return nbt;
 		}
 
@@ -226,6 +241,11 @@ public class MangadevModVariables {
 			NeutralCharacters = nbt.getString("NeutralCharacters");
 			DeadCharacters = nbt.getString("DeadCharacters");
 			ShortMangaName = nbt.getString("ShortMangaName");
+			CurrentArc = nbt.getString("CurrentArc");
+			ArcRating = nbt.getDouble("ArcRating");
+			CurrentArcChapters = nbt.getDouble("CurrentArcChapters");
+			ArcEndChapter = nbt.getBoolean("ArcEndChapter");
+			MangaType = nbt.getString("MangaType");
 		}
 	}
 
@@ -283,6 +303,11 @@ public class MangadevModVariables {
 					variables.NeutralCharacters = message.data.NeutralCharacters;
 					variables.DeadCharacters = message.data.DeadCharacters;
 					variables.ShortMangaName = message.data.ShortMangaName;
+					variables.CurrentArc = message.data.CurrentArc;
+					variables.ArcRating = message.data.ArcRating;
+					variables.CurrentArcChapters = message.data.CurrentArcChapters;
+					variables.ArcEndChapter = message.data.ArcEndChapter;
+					variables.MangaType = message.data.MangaType;
 				}
 			});
 			context.setPacketHandled(true);

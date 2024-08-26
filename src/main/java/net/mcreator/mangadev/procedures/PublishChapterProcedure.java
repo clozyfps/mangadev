@@ -18,6 +18,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.gui.components.EditBox;
+import net.minecraft.client.gui.components.Checkbox;
 import net.minecraft.client.Minecraft;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
@@ -81,6 +82,20 @@ public class PublishChapterProcedure {
 						}, _bpos);
 					}
 					{
+						double _setval = (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).Chapters + 1;
+						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.Chapters = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						double _setval = (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).CurrentArcChapters + 1;
+						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.CurrentArcChapters = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
 						double _setval = Mth.nextInt(RandomSource.create(), 1, 5);
 						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.RecentRating = _setval;
@@ -102,6 +117,19 @@ public class PublishChapterProcedure {
 							Minecraft.getInstance().gameRenderer.displayItemActivation(new ItemStack(Items.EMERALD));
 						if (entity instanceof Player _player)
 							_player.closeContainer();
+					}
+					if (guistate.containsKey("checkbox:EndArc") && ((Checkbox) guistate.get("checkbox:EndArc")).selected()
+							&& (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).CurrentArcChapters > 10) {
+						{
+							boolean _setval = true;
+							entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.ArcEndChapter = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+					} else if (guistate.containsKey("checkbox:EndArc") && ((Checkbox) guistate.get("checkbox:EndArc")).selected()
+							&& (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).CurrentArcChapters <= 10) {
+						entity.getPersistentData().putDouble("arcendbadtimer", 20);
 					}
 				} else {
 					entity.getPersistentData().putDouble("maineventtimer", 20);

@@ -308,7 +308,7 @@
       "locked_code": false,
       "registry_name": "genre_warning_display",
       "metadata": {
-        "return_type": "logic",
+        "return_type": "string",
         "files": [
           "src/main/java/net/mcreator/mangadev/procedures/GenreWarningDisplayProcedure.java"
         ],
@@ -772,6 +772,126 @@
         ]
       },
       "path": "~/Procedures/ChatTypes"
+    },
+    {
+      "name": "DisplayArcName",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_arc_name",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/mangadev/procedures/DisplayArcNameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "DisplayArcRating",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_arc_rating",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/mangadev/procedures/DisplayArcRatingProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "ArcNameCreationDisplay",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "arc_name_creation_display",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/mangadev/procedures/ArcNameCreationDisplayProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "ArcEndDisplay",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "arc_end_display",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/mangadev/procedures/ArcEndDisplayProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "ArcChapterCountDisplay",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "arc_chapter_count_display",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/mangadev/procedures/ArcChapterCountDisplayProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "TypeWarningDisplay",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "type_warning_display",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/mangadev/procedures/TypeWarningDisplayProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/GUI/Procedures"
     }
   ],
   "variable_elements": [
@@ -918,6 +1038,36 @@
       "type": "string",
       "scope": "player_persistent",
       "value": ""
+    },
+    {
+      "name": "CurrentArc",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "ArcRating",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "CurrentArcChapters",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "ArcEndChapter",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "MangaType",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
     }
   ],
   "sound_elements": [],
@@ -925,6 +1075,7 @@
   "tab_element_order": {},
   "language_map": {
     "en_us": {
+      "gui.mangadev.writer_gui.label_ssnsslarc_settings": "§n§lArc Settings",
       "gui.mangadev.first_chapter_creation.ComedySecond": "Comedy",
       "gamerule.fanChatOutput.description": "if you gain a new fan, the chat will display it.",
       "gui.mangadev.character_gui.label_sslcannot_be_empty": "§lCannot Be Empty!",
@@ -933,25 +1084,32 @@
       "gui.mangadev.manga_chapter_gui.button_ssnssl": "§n§l\u003c",
       "gui.mangadev.first_chapter_creation.ActionSecond": "Action",
       "gui.mangadev.first_chapter_creation.HorrorSecond": "Horror",
+      "gui.mangadev.first_chapter_creation.label_ssltext_cannot_be_empty1": "§lText Cannot Be Empty!",
       "gui.mangadev.first_chapter_creation.label_ssltext_cannot_be_empty": "§lText Cannot Be Empty!",
       "gui.mangadev.writer_gui.label_sslmain_event_cannot_be_empty": "§lMain Event Cannot Be Empty.",
-      "gui.mangadev.writer_gui.MainEvent": "Main Event",
+      "gui.mangadev.first_chapter_creation.BattleShonen": "Battle Shonen",
       "advancements.viral.title": "Viral",
+      "gui.mangadev.writer_gui.MainEvent": "Main Event",
       "gui.mangadev.writer_gui.tooltip_an_existing_character1": "An Existing Character.",
       "gui.mangadev.manga_gui.button_ssnssl_writer": "§n§l◆ Writer",
       "gui.mangadev.character_gui.Bad": "Bad",
       "gui.mangadev.character_gui.CharacterName": "Character Name",
-      "gui.mangadev.writer_gui.tooltip_an_existing_character4": "An Existing Character.",
       "gui.mangadev.writer_gui.tooltip_an_existing_character": "An Existing Character.",
+      "gui.mangadev.writer_gui.tooltip_an_existing_character4": "An Existing Character.",
       "gui.mangadev.writer_gui.tooltip_an_existing_character3": "An Existing Character.",
+      "gui.mangadev.writer_gui.label_ss1arcrating": "ArcRating",
       "gui.mangadev.writer_gui.tooltip_an_existing_character2": "An Existing Character.",
       "advancements.mangaka.descr": "Publish Your First Manga Chapter",
       "gamerule.tweetChatOutput": "Tweet Chat Output",
       "gui.mangadev.character_gui.Neutral": "Neutral",
+      "gui.mangadev.first_chapter_creation.Isekai": "Isekai",
       "gamerule.fanChatOutput": "Fan Increase Chat Output",
+      "gui.mangadev.writer_gui.button_end_arc": "§n§lEnd Arc",
+      "gui.mangadev.first_chapter_creation.Sports": "Sports",
       "advancements.it_only_gets_better.title": "It Only Gets Better From Here",
       "gui.mangadev.first_chapter_creation.RomanceSecond": "Romance",
       "gui.mangadev.manga_gui.button_twitter": "§n§l◆ Chirp",
+      "gui.mangadev.first_chapter_creation.Shojo": "Shojo",
       "gui.mangadev.character_gui.label_sslcharacter_created": "§lCharacter Created!",
       "gui.mangadev.first_chapter_creation.SliceOfLifeSecond": "Slice Of Life",
       "advancements.mangaka.title": "Mangaka",
@@ -960,7 +1118,7 @@
       "gui.mangadev.writer_gui.button_ssnsslpublish": "§n§lPublish",
       "gui.mangadev.character_gui.Good": "Good",
       "gui.mangadev.first_chapter_creation.Romance": "Romance",
-      "gui.mangadev.first_chapter_creation.button_ssnsslyes": "§n§lYes",
+      "gui.mangadev.first_chapter_creation.button_ssnsslyes": "§n§lFinish",
       "gui.mangadev.writer_gui.button_ssnssl": "§n§l\u003c",
       "gui.mangadev.writer_gui.SideCharacter": "Side Character",
       "gui.mangadev.first_chapter_creation.MangaCreate": "What\u0027s Your Manga Called?",
@@ -969,21 +1127,25 @@
       "advancements.viral.descr": "Go Viral For The First Time",
       "gui.mangadev.manga_gui.label_ssnssl_characters": "§n§l◆ Characters",
       "gui.mangadev.writer_gui.label_ssnsslpublish": "§n§lPublish",
+      "gui.mangadev.writer_gui.label_sslarc_too_short_to_end": "§lArc too short to end!",
       "gui.mangadev.character_gui.button_ssnssl": "§n§l\u003c",
       "gui.mangadev.first_chapter_creation.Horror": "Horror",
       "gui.mangadev.writer_gui.tooltip_a_existing_character": "An Existing Character.",
-      "gui.mangadev.first_chapter_creation.label_sslsecondary_genre": "§lSecondary Genre",
+      "gui.mangadev.first_chapter_creation.label_sslsecondary_genre": "§lType",
       "gui.mangadev.manga_gui.button_ssnssl": "§n§l\u003e",
       "gui.mangadev.character_gui.Hero": "Hero",
       "gui.mangadev.writer_gui.label_sslfocused_character_does_not_exi": "§lFocused Character Does Not Exist.",
       "gui.mangadev.character_gui.button_empty": "+",
       "gui.mangadev.manga_gui.label_chapters": "§n§l◆ Chapters",
       "key.mangadev.manga_menu": "Manga Menu",
+      "gui.mangadev.first_chapter_creation.ArcName": "Starting Arc Name",
       "gui.mangadev.writer_gui.FocusedCharacter": "Focused Character",
       "gamerule.tweetChatOutput.description": "if someone tweets about your manga, the chat will display it.",
       "advancements.noticed.title": "Noticed",
       "gui.mangadev.first_chapter_creation.Action": "Action",
       "gui.mangadev.manga_gui.button_ssnssl_characters": "§n§l◆ Characters",
+      "gui.mangadev.first_chapter_creation.Seinen": "Seinen",
+      "gui.mangadev.writer_gui.label_arcvalue": "ArcValue",
       "gui.mangadev.first_chapter_creation.label_sslyou_can_only_have_1_genre": "§lMain Genre",
       "gui.mangadev.first_chapter_creation.SliceOfLife": "Slice Of Life",
       "advancements.it_only_gets_better.descr": "Gain 100 Fans."

@@ -46,5 +46,11 @@ public class TimersProcedure {
 		if (entity.getPersistentData().getDouble("characternamebadtimer") > 0) {
 			entity.getPersistentData().putDouble("characternamebadtimer", (entity.getPersistentData().getDouble("characternamebadtimer") - 1));
 		}
+		if (entity.getPersistentData().getDouble("arcendbadtimer") > 0) {
+			entity.getPersistentData().putDouble("arcendbadtimer", (entity.getPersistentData().getDouble("arcendbadtimer") - 1));
+		}
+		if (entity.getPersistentData().getDouble("typetimer") > 0) {
+			entity.getPersistentData().putDouble("typetimer", (entity.getPersistentData().getDouble("typetimer") - 1));
+		}
 	}
 }

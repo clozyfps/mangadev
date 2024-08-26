@@ -16,6 +16,10 @@ import net.mcreator.mangadev.world.inventory.WriterGUIMenu;
 import net.mcreator.mangadev.procedures.DisplaySideCharacterTimerProcedure;
 import net.mcreator.mangadev.procedures.DisplayMainEventWarningProcedure;
 import net.mcreator.mangadev.procedures.DisplayFocusedCharWarningProcedure;
+import net.mcreator.mangadev.procedures.DisplayArcRatingProcedure;
+import net.mcreator.mangadev.procedures.DisplayArcNameProcedure;
+import net.mcreator.mangadev.procedures.ArcEndDisplayProcedure;
+import net.mcreator.mangadev.procedures.ArcChapterCountDisplayProcedure;
 import net.mcreator.mangadev.network.WriterGUIButtonMessage;
 import net.mcreator.mangadev.MangadevMod;
 
@@ -57,17 +61,17 @@ public class WriterGUIScreen extends AbstractContainerScreen<WriterGUIMenu> {
 		SideCharacter.render(guiGraphics, mouseX, mouseY, partialTicks);
 		MainEvent.render(guiGraphics, mouseX, mouseY, partialTicks);
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
-		if (mouseX > leftPos + -163 && mouseX < leftPos + -139 && mouseY > topPos + 106 && mouseY < topPos + 130)
+		if (mouseX > leftPos + -163 && mouseX < leftPos + -139 && mouseY > topPos + -20 && mouseY < topPos + 4)
 			guiGraphics.renderTooltip(font, Component.translatable("gui.mangadev.writer_gui.tooltip_a_existing_character"), mouseX, mouseY);
-		if (mouseX > leftPos + -127 && mouseX < leftPos + -103 && mouseY > topPos + 106 && mouseY < topPos + 130)
+		if (mouseX > leftPos + -127 && mouseX < leftPos + -103 && mouseY > topPos + -20 && mouseY < topPos + 4)
 			guiGraphics.renderTooltip(font, Component.translatable("gui.mangadev.writer_gui.tooltip_an_existing_character"), mouseX, mouseY);
-		if (mouseX > leftPos + -199 && mouseX < leftPos + -175 && mouseY > topPos + 106 && mouseY < topPos + 130)
+		if (mouseX > leftPos + -199 && mouseX < leftPos + -175 && mouseY > topPos + -20 && mouseY < topPos + 4)
 			guiGraphics.renderTooltip(font, Component.translatable("gui.mangadev.writer_gui.tooltip_an_existing_character1"), mouseX, mouseY);
-		if (mouseX > leftPos + -199 && mouseX < leftPos + -175 && mouseY > topPos + 133 && mouseY < topPos + 157)
+		if (mouseX > leftPos + -199 && mouseX < leftPos + -175 && mouseY > topPos + 7 && mouseY < topPos + 31)
 			guiGraphics.renderTooltip(font, Component.translatable("gui.mangadev.writer_gui.tooltip_an_existing_character2"), mouseX, mouseY);
-		if (mouseX > leftPos + -163 && mouseX < leftPos + -139 && mouseY > topPos + 133 && mouseY < topPos + 157)
+		if (mouseX > leftPos + -163 && mouseX < leftPos + -139 && mouseY > topPos + 7 && mouseY < topPos + 31)
 			guiGraphics.renderTooltip(font, Component.translatable("gui.mangadev.writer_gui.tooltip_an_existing_character3"), mouseX, mouseY);
-		if (mouseX > leftPos + -127 && mouseX < leftPos + -103 && mouseY > topPos + 133 && mouseY < topPos + 157)
+		if (mouseX > leftPos + -127 && mouseX < leftPos + -103 && mouseY > topPos + 7 && mouseY < topPos + 31)
 			guiGraphics.renderTooltip(font, Component.translatable("gui.mangadev.writer_gui.tooltip_an_existing_character4"), mouseX, mouseY);
 	}
 
@@ -122,17 +126,29 @@ public class WriterGUIScreen extends AbstractContainerScreen<WriterGUIMenu> {
 	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 		if (DisplayFocusedCharWarningProcedure.execute(entity))
-			guiGraphics.drawString(this.font, Component.translatable("gui.mangadev.writer_gui.label_sslfocused_character_does_not_exi"), -82, 115, -65485, false);
+			guiGraphics.drawString(this.font, Component.translatable("gui.mangadev.writer_gui.label_sslfocused_character_does_not_exi"), -82, -20, -65536, false);
 		if (DisplaySideCharacterTimerProcedure.execute(entity))
-			guiGraphics.drawString(this.font, Component.translatable("gui.mangadev.writer_gui.label_sslside_character_does_not_exist"), -82, 142, -65485, false);
+			guiGraphics.drawString(this.font, Component.translatable("gui.mangadev.writer_gui.label_sslside_character_does_not_exist"), -82, 7, -65536, false);
 		if (DisplayMainEventWarningProcedure.execute(entity))
-			guiGraphics.drawString(this.font, Component.translatable("gui.mangadev.writer_gui.label_sslmain_event_cannot_be_empty"), -82, 169, -65485, false);
+			guiGraphics.drawString(this.font, Component.translatable("gui.mangadev.writer_gui.label_sslmain_event_cannot_be_empty"), -82, 34, -65536, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.mangadev.writer_gui.label_ssnsslarc_settings"), 89, 142, -1, false);
+		guiGraphics.drawString(this.font,
+
+				DisplayArcNameProcedure.execute(entity), -208, 61, -1, false);
+		guiGraphics.drawString(this.font,
+
+				DisplayArcRatingProcedure.execute(entity), -208, 79, -1, false);
+		if (ArcEndDisplayProcedure.execute(entity))
+			guiGraphics.drawString(this.font, Component.translatable("gui.mangadev.writer_gui.label_sslarc_too_short_to_end"), -208, 115, -65536, false);
+		guiGraphics.drawString(this.font,
+
+				ArcChapterCountDisplayProcedure.execute(entity), -208, 97, -1, false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		ChapterName = new EditBox(this.font, this.leftPos + -63, this.topPos + 71, 118, 18, Component.translatable("gui.mangadev.writer_gui.ChapterName")) {
+		ChapterName = new EditBox(this.font, this.leftPos + 90, this.topPos + 179, 118, 18, Component.translatable("gui.mangadev.writer_gui.ChapterName")) {
 			@Override
 			public void insertText(String text) {
 				super.insertText(text);
@@ -155,7 +171,7 @@ public class WriterGUIScreen extends AbstractContainerScreen<WriterGUIMenu> {
 		ChapterName.setMaxLength(32767);
 		guistate.put("text:ChapterName", ChapterName);
 		this.addWidget(this.ChapterName);
-		FocusedCharacter = new EditBox(this.font, this.leftPos + -207, this.topPos + 107, 118, 18, Component.translatable("gui.mangadev.writer_gui.FocusedCharacter")) {
+		FocusedCharacter = new EditBox(this.font, this.leftPos + -207, this.topPos + -19, 118, 18, Component.translatable("gui.mangadev.writer_gui.FocusedCharacter")) {
 			@Override
 			public void insertText(String text) {
 				super.insertText(text);
@@ -178,7 +194,7 @@ public class WriterGUIScreen extends AbstractContainerScreen<WriterGUIMenu> {
 		FocusedCharacter.setMaxLength(32767);
 		guistate.put("text:FocusedCharacter", FocusedCharacter);
 		this.addWidget(this.FocusedCharacter);
-		SideCharacter = new EditBox(this.font, this.leftPos + -207, this.topPos + 134, 118, 18, Component.translatable("gui.mangadev.writer_gui.SideCharacter")) {
+		SideCharacter = new EditBox(this.font, this.leftPos + -207, this.topPos + 8, 118, 18, Component.translatable("gui.mangadev.writer_gui.SideCharacter")) {
 			@Override
 			public void insertText(String text) {
 				super.insertText(text);
@@ -201,7 +217,7 @@ public class WriterGUIScreen extends AbstractContainerScreen<WriterGUIMenu> {
 		SideCharacter.setMaxLength(32767);
 		guistate.put("text:SideCharacter", SideCharacter);
 		this.addWidget(this.SideCharacter);
-		MainEvent = new EditBox(this.font, this.leftPos + -207, this.topPos + 161, 118, 18, Component.translatable("gui.mangadev.writer_gui.MainEvent")) {
+		MainEvent = new EditBox(this.font, this.leftPos + -207, this.topPos + 35, 118, 18, Component.translatable("gui.mangadev.writer_gui.MainEvent")) {
 			@Override
 			public void insertText(String text) {
 				super.insertText(text);
@@ -224,7 +240,7 @@ public class WriterGUIScreen extends AbstractContainerScreen<WriterGUIMenu> {
 		MainEvent.setMaxLength(32767);
 		guistate.put("text:MainEvent", MainEvent);
 		this.addWidget(this.MainEvent);
-		button_ssnsslpublish = new PlainTextButton(this.leftPos + -28, this.topPos + 97, 82, 20, Component.translatable("gui.mangadev.writer_gui.button_ssnsslpublish"), e -> {
+		button_ssnsslpublish = new PlainTextButton(this.leftPos + 89, this.topPos + 160, 82, 20, Component.translatable("gui.mangadev.writer_gui.button_ssnsslpublish"), e -> {
 			if (true) {
 				MangadevMod.PACKET_HANDLER.sendToServer(new WriterGUIButtonMessage(0, x, y, z));
 				WriterGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
