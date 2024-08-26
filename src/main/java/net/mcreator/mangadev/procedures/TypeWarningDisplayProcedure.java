@@ -1,6 +1,6 @@
 package net.mcreator.mangadev.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.world.entity.Entity;
 
 public class TypeWarningDisplayProcedure {
 	public static String execute(Entity entity) {
