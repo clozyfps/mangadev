@@ -43,7 +43,7 @@ public class CharacterOpinionChatTypeProcedure {
 							+ (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).SideCharacter + " needs more screen time.")), false);
 			} else if (random == 7) {
 				randomCharacter = (((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).Characters))
-						.split(" ")[(Mth.nextInt(RandomSource.create(), 1, (int) (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).CharacterAmount))];
+						.split(" ")[(Mth.nextInt(RandomSource.create(), 0, (int) (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).CharacterAmount))];
 				if (!(randomCharacter.contains((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).FocusedCharacter)
 						|| randomCharacter.contains((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).SideCharacter)
 						|| randomCharacter.contains((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MainEvent))) {
@@ -98,14 +98,14 @@ public class CharacterOpinionChatTypeProcedure {
 							+ (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).SideCharacter + " needs more screen time.")), false);
 			} else if (random == 7) {
 				randomCharacter = (((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).Characters))
-						.split(" ")[(Mth.nextInt(RandomSource.create(), 1, (int) (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).CharacterAmount))];
+						.split(" ")[(Mth.nextInt(RandomSource.create(), 0, (int) (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).CharacterAmount))];
 				if (!(randomCharacter.contains((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).FocusedCharacter)
 						|| randomCharacter.contains((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).SideCharacter)
 						|| randomCharacter.contains((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MainEvent))) {
 					if (entity instanceof Player _player && !_player.level().isClientSide())
 						_player.displayClientMessage(Component.literal(("\u00A79[@" + (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).RandomUser + "] "
 								+ (((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).Characters))
-										.split(" ")[(Mth.nextInt(RandomSource.create(), 1, (int) (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).CharacterAmount))]
+										.split(" ")[(Mth.nextInt(RandomSource.create(), 0, (int) (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).CharacterAmount))]
 								+ "should've been in \u00A7l #" + new java.text.DecimalFormat("#").format((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).Chapters))),
 								false);
 				} else {
@@ -160,14 +160,14 @@ public class CharacterOpinionChatTypeProcedure {
 							+ (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).SideCharacter + "supremacy")), false);
 			} else if (random == 9) {
 				randomCharacter = (((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).Characters))
-						.split(" ")[(Mth.nextInt(RandomSource.create(), 1, (int) (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).CharacterAmount))];
+						.split(" ")[(Mth.nextInt(RandomSource.create(), 0, (int) (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).CharacterAmount))];
 				if (!(randomCharacter.contains((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).FocusedCharacter)
 						|| randomCharacter.contains((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).SideCharacter)
 						|| randomCharacter.contains((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).MainEvent))) {
 					if (entity instanceof Player _player && !_player.level().isClientSide())
 						_player.displayClientMessage(Component.literal(("\u00A79[@" + (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).RandomUser + "] where was "
 								+ (((entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).Characters))
-										.split(" ")[(Mth.nextInt(RandomSource.create(), 1, (int) (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).CharacterAmount))]
+										.split(" ")[(Mth.nextInt(RandomSource.create(), 0, (int) (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).CharacterAmount))]
 								+ " at in the latest chapter??!")), false);
 				} else {
 					CharacterOpinionChatTypeProcedure.execute(entity);

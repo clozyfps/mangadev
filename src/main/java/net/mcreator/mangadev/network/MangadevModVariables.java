@@ -102,9 +102,15 @@ public class MangadevModVariables {
 			clone.ShortMangaName = original.ShortMangaName;
 			clone.CurrentArc = original.CurrentArc;
 			clone.ArcRating = original.ArcRating;
-			clone.CurrentArcChapters = original.CurrentArcChapters;
-			clone.ArcEndChapter = original.ArcEndChapter;
 			clone.MangaType = original.MangaType;
+			clone.ArcEndChapter = original.ArcEndChapter;
+			clone.CurrentArcChapters = original.CurrentArcChapters;
+			clone.FifthLetterRandomizer = original.FifthLetterRandomizer;
+			clone.FourthLetterRandomizer = original.FourthLetterRandomizer;
+			clone.ThirdLetterRandomizer = original.ThirdLetterRandomizer;
+			clone.StarterLetterRandomizer = original.StarterLetterRandomizer;
+			clone.SixthLetterRandomizer = original.SixthLetterRandomizer;
+			clone.SecondLetterRandomizer = original.SecondLetterRandomizer;
 			if (!event.isWasDeath()) {
 			}
 			if (!event.getEntity().level().isClientSide()) {
@@ -172,9 +178,15 @@ public class MangadevModVariables {
 		public String ShortMangaName = "";
 		public String CurrentArc = "";
 		public double ArcRating = 0.0;
-		public double CurrentArcChapters = 0;
-		public boolean ArcEndChapter = false;
 		public String MangaType = "\"\"";
+		public boolean ArcEndChapter = false;
+		public double CurrentArcChapters = 0;
+		public String FifthLetterRandomizer = "";
+		public String FourthLetterRandomizer = "";
+		public String ThirdLetterRandomizer = "";
+		public String StarterLetterRandomizer = "";
+		public String SixthLetterRandomizer = "0";
+		public String SecondLetterRandomizer = "\"\"";
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -209,9 +221,15 @@ public class MangadevModVariables {
 			nbt.putString("ShortMangaName", ShortMangaName);
 			nbt.putString("CurrentArc", CurrentArc);
 			nbt.putDouble("ArcRating", ArcRating);
-			nbt.putDouble("CurrentArcChapters", CurrentArcChapters);
-			nbt.putBoolean("ArcEndChapter", ArcEndChapter);
 			nbt.putString("MangaType", MangaType);
+			nbt.putBoolean("ArcEndChapter", ArcEndChapter);
+			nbt.putDouble("CurrentArcChapters", CurrentArcChapters);
+			nbt.putString("FifthLetterRandomizer", FifthLetterRandomizer);
+			nbt.putString("FourthLetterRandomizer", FourthLetterRandomizer);
+			nbt.putString("ThirdLetterRandomizer", ThirdLetterRandomizer);
+			nbt.putString("StarterLetterRandomizer", StarterLetterRandomizer);
+			nbt.putString("SixthLetterRandomizer", SixthLetterRandomizer);
+			nbt.putString("SecondLetterRandomizer", SecondLetterRandomizer);
 			return nbt;
 		}
 
@@ -243,9 +261,15 @@ public class MangadevModVariables {
 			ShortMangaName = nbt.getString("ShortMangaName");
 			CurrentArc = nbt.getString("CurrentArc");
 			ArcRating = nbt.getDouble("ArcRating");
-			CurrentArcChapters = nbt.getDouble("CurrentArcChapters");
-			ArcEndChapter = nbt.getBoolean("ArcEndChapter");
 			MangaType = nbt.getString("MangaType");
+			ArcEndChapter = nbt.getBoolean("ArcEndChapter");
+			CurrentArcChapters = nbt.getDouble("CurrentArcChapters");
+			FifthLetterRandomizer = nbt.getString("FifthLetterRandomizer");
+			FourthLetterRandomizer = nbt.getString("FourthLetterRandomizer");
+			ThirdLetterRandomizer = nbt.getString("ThirdLetterRandomizer");
+			StarterLetterRandomizer = nbt.getString("StarterLetterRandomizer");
+			SixthLetterRandomizer = nbt.getString("SixthLetterRandomizer");
+			SecondLetterRandomizer = nbt.getString("SecondLetterRandomizer");
 		}
 	}
 
@@ -305,9 +329,15 @@ public class MangadevModVariables {
 					variables.ShortMangaName = message.data.ShortMangaName;
 					variables.CurrentArc = message.data.CurrentArc;
 					variables.ArcRating = message.data.ArcRating;
-					variables.CurrentArcChapters = message.data.CurrentArcChapters;
-					variables.ArcEndChapter = message.data.ArcEndChapter;
 					variables.MangaType = message.data.MangaType;
+					variables.ArcEndChapter = message.data.ArcEndChapter;
+					variables.CurrentArcChapters = message.data.CurrentArcChapters;
+					variables.FifthLetterRandomizer = message.data.FifthLetterRandomizer;
+					variables.FourthLetterRandomizer = message.data.FourthLetterRandomizer;
+					variables.ThirdLetterRandomizer = message.data.ThirdLetterRandomizer;
+					variables.StarterLetterRandomizer = message.data.StarterLetterRandomizer;
+					variables.SixthLetterRandomizer = message.data.SixthLetterRandomizer;
+					variables.SecondLetterRandomizer = message.data.SecondLetterRandomizer;
 				}
 			});
 			context.setPacketHandled(true);

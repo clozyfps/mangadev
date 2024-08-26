@@ -6,7 +6,7 @@
     "displayName": "Tweet Chat Output",
     "description": "if someone tweets about your manga, the chat will display it.",
     "category": "CHAT",
-    "defaultValueLogic": false,
+    "defaultValueLogic": true,
     "defaultValueNumber": 0
   }
 }

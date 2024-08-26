@@ -308,7 +308,7 @@
       "locked_code": false,
       "registry_name": "genre_warning_display",
       "metadata": {
-        "return_type": "string",
+        "return_type": "logic",
         "files": [
           "src/main/java/net/mcreator/mangadev/procedures/GenreWarningDisplayProcedure.java"
         ],
@@ -774,15 +774,15 @@
       "path": "~/Procedures/ChatTypes"
     },
     {
-      "name": "DisplayArcName",
+      "name": "ArcNameCreationDisplay",
       "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "display_arc_name",
+      "registry_name": "arc_name_creation_display",
       "metadata": {
-        "return_type": "string",
+        "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/mangadev/procedures/DisplayArcNameProcedure.java"
+          "src/main/java/net/mcreator/mangadev/procedures/ArcNameCreationDisplayProcedure.java"
         ],
         "dependencies": [
           {
@@ -790,6 +790,21 @@
             "type": "entity"
           }
         ]
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "ArcChapterCountDisplay",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "arc_chapter_count_display",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/mangadev/procedures/ArcChapterCountDisplayProcedure.java"
+        ],
+        "dependencies": []
       },
       "path": "~/GUI/Procedures"
     },
@@ -804,25 +819,35 @@
         "files": [
           "src/main/java/net/mcreator/mangadev/procedures/DisplayArcRatingProcedure.java"
         ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/GUI/Procedures"
     },
     {
-      "name": "ArcNameCreationDisplay",
+      "name": "DisplayArcName",
       "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "arc_name_creation_display",
+      "registry_name": "display_arc_name",
       "metadata": {
-        "return_type": "logic",
+        "return_type": "string",
         "files": [
-          "src/main/java/net/mcreator/mangadev/procedures/ArcNameCreationDisplayProcedure.java"
+          "src/main/java/net/mcreator/mangadev/procedures/DisplayArcNameProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/GUI/Procedures"
+    },
+    {
+      "name": "TypeWarningDisplay",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "type_warning_display",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/mangadev/procedures/TypeWarningDisplayProcedure.java"
         ],
         "dependencies": [
           {
@@ -854,35 +879,46 @@
       "path": "~/GUI/Procedures"
     },
     {
-      "name": "ArcChapterCountDisplay",
+      "name": "FanSet",
       "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "arc_chapter_count_display",
+      "registry_name": "fan_set",
       "metadata": {
-        "return_type": "string",
         "files": [
-          "src/main/java/net/mcreator/mangadev/procedures/ArcChapterCountDisplayProcedure.java"
+          "src/main/java/net/mcreator/mangadev/procedures/FanSetProcedure.java"
         ],
         "dependencies": [
           {
-            "name": "entity",
-            "type": "entity"
+            "name": "arguments",
+            "type": "cmdcontext"
           }
         ]
       },
-      "path": "~/GUI/Procedures"
+      "path": "~/Commands/Procedures"
     },
     {
-      "name": "TypeWarningDisplay",
+      "name": "MangakaDev",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mangaka_dev",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/mangadev/command/MangakaDevCommand.java"
+        ]
+      },
+      "path": "~/Commands"
+    },
+    {
+      "name": "MainEventChatType",
       "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "type_warning_display",
+      "registry_name": "main_event_chat_type",
       "metadata": {
-        "return_type": "string",
         "files": [
-          "src/main/java/net/mcreator/mangadev/procedures/TypeWarningDisplayProcedure.java"
+          "src/main/java/net/mcreator/mangadev/procedures/MainEventChatTypeProcedure.java"
         ],
         "dependencies": [
           {
@@ -891,7 +927,7 @@
           }
         ]
       },
-      "path": "~/GUI/Procedures"
+      "path": "~/Procedures/ChatTypes"
     }
   ],
   "variable_elements": [
@@ -1052,10 +1088,10 @@
       "value": "0.0"
     },
     {
-      "name": "CurrentArcChapters",
-      "type": "number",
+      "name": "MangaType",
+      "type": "string",
       "scope": "player_persistent",
-      "value": "0"
+      "value": "\"\""
     },
     {
       "name": "ArcEndChapter",
@@ -1064,7 +1100,43 @@
       "value": "false"
     },
     {
-      "name": "MangaType",
+      "name": "CurrentArcChapters",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "FifthLetterRandomizer",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "FourthLetterRandomizer",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "ThirdLetterRandomizer",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "StarterLetterRandomizer",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "SixthLetterRandomizer",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "SecondLetterRandomizer",
       "type": "string",
       "scope": "player_persistent",
       "value": "\"\""
@@ -1155,13 +1227,8 @@
     "name": "~",
     "children": [
       {
-        "name": "GUI",
-        "children": [
-          {
-            "name": "Procedures",
-            "children": []
-          }
-        ]
+        "name": "Achievement",
+        "children": []
       },
       {
         "name": "Keybind",
@@ -1186,8 +1253,22 @@
         "children": []
       },
       {
-        "name": "Achievement",
-        "children": []
+        "name": "GUI",
+        "children": [
+          {
+            "name": "Procedures",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Commands",
+        "children": [
+          {
+            "name": "Procedures",
+            "children": []
+          }
+        ]
       }
     ]
   },
