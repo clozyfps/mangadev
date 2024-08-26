@@ -39,6 +39,27 @@ public class PublishChapterProcedure {
 					.contains(guistate.containsKey("text:SideCharacter") ? ((EditBox) guistate.get("text:SideCharacter")).getValue() : "")) {
 				if (!(guistate.containsKey("text:MainEvent") ? ((EditBox) guistate.get("text:MainEvent")).getValue() : "").isEmpty()) {
 					{
+						double _setval = 0;
+						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.DiscoveryRate = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						double _setval = 0;
+						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.RecentChapterFans = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						double _setval = 0;
+						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.RecentChapterViews = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
 						String _setval = guistate.containsKey("text:ChapterName") ? ((EditBox) guistate.get("text:ChapterName")).getValue() : "";
 						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.RecentChapter = _setval;
@@ -84,6 +105,13 @@ public class PublishChapterProcedure {
 						double _setval = Mth.nextInt(RandomSource.create(), 1, 5);
 						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.RecentRating = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						double _setval = (entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new MangadevModVariables.PlayerVariables())).Chapters + 1;
+						entity.getCapability(MangadevModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.Chapters = _setval;
 							capability.syncPlayerVariables(entity);
 						});
 					}
