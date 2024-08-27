@@ -308,7 +308,7 @@
       "locked_code": false,
       "registry_name": "genre_warning_display",
       "metadata": {
-        "return_type": "string",
+        "return_type": "logic",
         "files": [
           "src/main/java/net/mcreator/mangadev/procedures/GenreWarningDisplayProcedure.java"
         ],
@@ -855,19 +855,14 @@
         "files": [
           "src/main/java/net/mcreator/mangadev/procedures/ArcChapterCountDisplayProcedure.java"
         ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/GUI/Procedures"
     },
     {
       "name": "DisplayArcRating",
       "type": "procedure",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "display_arc_rating",
       "metadata": {
@@ -875,19 +870,14 @@
         "files": [
           "src/main/java/net/mcreator/mangadev/procedures/DisplayArcRatingProcedure.java"
         ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/GUI/Procedures"
     },
     {
       "name": "DisplayArcName",
       "type": "procedure",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "display_arc_name",
       "metadata": {
@@ -895,12 +885,7 @@
         "files": [
           "src/main/java/net/mcreator/mangadev/procedures/DisplayArcNameProcedure.java"
         ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/GUI/Procedures"
     },
